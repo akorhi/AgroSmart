@@ -1,0 +1,13 @@
+project_id = "nxftpcrxztnmfqolkbzb"
+
+[functions.ai-chat]
+verify_jwt = false
+
+[functions.weather-insights]
+verify_jwt = false
+
+[functions.search-farming-videos]
+verify_jwt = false
+
+[functions.diagnose-plant-disease]
+verify_jwt = false

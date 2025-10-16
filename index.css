@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Markdown prose styling for chat messages */
+  .prose {
+    @apply text-foreground;
+  }
+  .prose strong {
+    @apply font-bold;
+  }
+  .prose em {
+    @apply italic;
+  }
+  .prose ul {
+    @apply list-disc list-inside my-2;
+  }
+  .prose ol {
+    @apply list-decimal list-inside my-2;
+  }
+  .prose li {
+    @apply my-1;
+  }
+  .prose p {
+    @apply my-2;
+  }
+  .prose code {
+    @apply bg-muted px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+  .prose pre {
+    @apply bg-muted p-3 rounded-lg overflow-x-auto my-2;
+  }
+  .prose h1, .prose h2, .prose h3, .prose h4 {
+    @apply font-bold mt-4 mb-2;
+  }
+  .prose h1 {
+    @apply text-xl;
+  }
+  .prose h2 {
+    @apply text-lg;
+  }
+  .prose h3 {
+    @apply text-base;
+  }
+  .prose blockquote {
+    @apply border-l-4 border-border pl-4 italic my-2;
+  }
+}
+
+/* Agricultural AI Platform Design System - Krishi Doctor
+All colors MUST be HSL for proper theming.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+    --card-border: 220 13% 91%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+    --primary: 142 70% 45%;
+    --primary-foreground: 210 20% 98%;
+    --primary-light: 142 70% 55%;
+    --primary-lighter: 142 70% 70%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 9% 46%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 220 14% 96%;
+    --accent-foreground: 220 9% 46%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 142 70% 45%;
+    --radius: 0.75rem;
+    --success: 142 70% 45%;
+    --success-foreground: 210 20% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 48 96% 89%;
+    --severity-high: 0 84% 60%;
+    --severity-medium: 38 92% 50%;
+    --severity-low: 142 70% 45%;
+    
+    /* Green gradient for hero */
+    --hero-gradient-start: 142 70% 45%;
+    --hero-gradient-middle: 200 60% 40%;
+    --hero-gradient-end: 240 80% 35%;
+    
+    /* Additional color tokens */
+    --blue: 217 91% 60%;
+    --orange: 25 95% 53%;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme for agricultural platform */
+    --background: 120 15% 8%;
+    --foreground: 120 15% 92%;
+
+    --card: 120 15% 10%;
+    --card-foreground: 120 15% 92%;
+    --card-border: 120 20% 20%;
+
+    --popover: 120 15% 10%;
+    --popover-foreground: 120 15% 92%;
+
+    --primary: 120 50% 55%;
+    --primary-foreground: 120 15% 8%;
+    --primary-light: 120 40% 65%;
+    --primary-lighter: 120 30% 25%;
+
+    --secondary: 120 15% 15%;
+    --secondary-foreground: 120 15% 85%;
+
+    --muted: 120 15% 15%;
+    --muted-foreground: 120 10% 65%;
+
+    --accent: 120 45% 45%;
+    --accent-foreground: 120 15% 8%;
+
+    --success: 120 50% 50%;
+    --success-foreground: 120 15% 8%;
+    --warning: 45 85% 65%;
+    --warning-foreground: 45 20% 15%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --severity-high: 0 65% 55%;
+    --severity-medium: 45 85% 65%;
+    --severity-low: 120 50% 50%;
+
+    --border: 120 15% 20%;
+    --input: 120 15% 15%;
+    --ring: 120 50% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer components {
+  /* Upload area styling */
+  .upload-area {
+    @apply border-2 border-dashed border-primary/30 bg-primary-lighter/20 hover:border-primary/50 transition-colors duration-200;
+  }
+
+  /* Severity indicators */
+  .severity-high {
+    @apply bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-300;
+  }
+  
+  .severity-medium {
+    @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-300;
+  }
+  
+  .severity-low {
+    @apply bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-300;
+  }
+
+  /* Pest card animations */
+  .pest-card {
+    @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-1 cursor-pointer;
+  }
+
+  /* Feature highlight */
+  .feature-highlight {
+    @apply bg-gradient-to-br from-primary-lighter/30 to-accent/20 border border-primary/20;
+  }
+}
